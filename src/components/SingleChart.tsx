@@ -1,7 +1,7 @@
 import { Chart as ChartJs, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
-import styles from "../style/SingleChart.module.scss";
+import style from "../style/SingleChart.module.scss";
 
 ChartJs.register(ArcElement, Tooltip, Legend);
 
@@ -11,8 +11,9 @@ interface SingleChartProps {
 
 const SingleChart = ({ day }: SingleChartProps) => {
   return (
-    <div className={styles.singleChart}>
-      <h2 className={styles.title}>{day}</h2>
+    <div className={style.singleChart}>
+      <h2 className={style.text}>{day}</h2>
+      <h4 className={style.text}>Green energy: NaN %</h4>
       <Pie
         data={{
           labels: ["Red", "Blue", "Yellow", "Green", "Purple"],

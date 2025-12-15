@@ -1,0 +1,31 @@
+.container{
+    background-color: rgb(201, 242, 196);
+    margin: 10px;
+    text-align: center;
+
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.chargingForm{
+    padding-left: 10px;
+    text-align: left;
+    font-size: 24px;
+    input, button{
+        font-size: 18px;
+        padding: 10px;
+        margin: 6px;
+    }
+    input{
+        width: 42%;
+        background-color: #e0fde0;
+    }
+    button{
+        width: 53%;
+        background-color: #36d40f;
+    }
+    label{
+        padding-left: 1%;
+    }
+}
+
