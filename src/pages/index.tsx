@@ -1,11 +1,9 @@
-import Link from "next/link";
-import Chart from "../components/Chart";
+import ThreeCharts from "../components/ThreeCharts";
 
 export default function Home() {
   return (
     <div>
-      Hello World. <Link href="/about">About</Link>
-      <Chart />
+      <ThreeCharts />
     </div>
   );
 }
