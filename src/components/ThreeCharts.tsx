@@ -1,15 +1,73 @@
 import SingleChart from "./SingleChart";
 
 import style from "../style/ThreeCharts.module.scss";
+import { useEffect, useState } from "react";
+
+interface EnergyMix {
+  from: string;
+  to: string;
+  greenEnergyPerc: EnergySource[];
+  otherEnergyPerc: EnergySource[];
+  totalGreenPerc: number;
+}
+
+interface EnergySource {
+  fuel: string;
+  perc: number;
+}
 
 const ThreeCharts = () => {
+  const [energyMix, setEnergyMix] = useState<EnergyMix[]>([]);
+  //   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // TODO: Update path to fetch data from backend
+  useEffect(() => {
+    const fetchData = async () => {
+      //   setIsLoading(true);
+      const response = await fetch(
+        "http://localhost:8080/energy-mix/current-three-days"
+      );
+      const data = (await response.json()) as EnergyMix[];
+      setEnergyMix(data);
+      //   setIsLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(energyMix);
+  }, [energyMix]);
+
+  //   if (isLoading) {
+  //     return <div>fetching data...</div>;
+  //   }
+
   return (
     <div className={style.container}>
       <h1 className={style.title}>Energy mix of UK</h1>
       <div className={style.chartContainer}>
-        <SingleChart day={"Yesterday"} />
-        <SingleChart day={"Today"} />
-        <SingleChart day={"Tomorrow"} />
+        {energyMix && energyMix.length >= 3 && (
+          <>
+            <SingleChart
+              day={"Today"}
+              totalGreenPerc={energyMix[0]?.totalGreenPerc}
+              greenEnergyPerc={energyMix[0]?.greenEnergyPerc}
+              otherEnergyPerc={energyMix[0]?.otherEnergyPerc}
+            />
+            <SingleChart
+              day={"Tomorrow"}
+              totalGreenPerc={energyMix[1]?.totalGreenPerc}
+              greenEnergyPerc={energyMix[1]?.greenEnergyPerc}
+              otherEnergyPerc={energyMix[1]?.otherEnergyPerc}
+            />
+            <SingleChart
+              day={"In two days"}
+              totalGreenPerc={energyMix[2]?.totalGreenPerc}
+              greenEnergyPerc={energyMix[2]?.greenEnergyPerc}
+              otherEnergyPerc={energyMix[2]?.otherEnergyPerc}
+            />
+          </>
+        )}
       </div>
     </div>
   );
