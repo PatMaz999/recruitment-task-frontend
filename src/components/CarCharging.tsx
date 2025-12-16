@@ -37,7 +37,7 @@ const CarCharging = () => {
       <h1>Calculate Optimal Car charging hours</h1>
       <form className={style.chargingForm} onSubmit={handleSubmit}>
         <label>Count of hours: </label>
-        <div>
+        <div className={style.box}>
           <input
             onChange={handleChange}
             type="number"

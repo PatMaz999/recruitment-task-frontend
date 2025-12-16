@@ -18,29 +18,16 @@ interface EnergySource {
 
 const ThreeCharts = () => {
   const [energyMix, setEnergyMix] = useState<EnergyMix[]>([]);
-  //   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  // TODO: Update path to fetch data from backend
   useEffect(() => {
     const fetchData = async () => {
-      //   setIsLoading(true);
       const response = await fetch(
         "http://localhost:8080/energy-mix/current-three-days"
       );
       const data = (await response.json()) as EnergyMix[];
       setEnergyMix(data);
-      //   setIsLoading(false);
     };
     fetchData();
   }, []);
-
-  // useEffect(() => {
-  //   console.log(energyMix);
-  // }, [energyMix]);
-
-  //   if (isLoading) {
-  //     return <div>fetching data...</div>;
-  //   }
 
   return (
     <div className={style.container}>

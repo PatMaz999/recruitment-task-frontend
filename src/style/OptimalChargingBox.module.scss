@@ -11,6 +11,9 @@
 
     width: 40%;
 }
-// .text{
-//     // font-family:  'Arial';
-// }
+
+@media (max-width: 1000px) {
+    .container{
+        width: 70%;
+    }
+}

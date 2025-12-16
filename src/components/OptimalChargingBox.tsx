@@ -1,4 +1,3 @@
-import { start } from "node:repl";
 import style from "../style/OptimalChargingBox.module.scss";
 
 interface OptimalChargingProps {
