@@ -34,9 +34,9 @@ const ThreeCharts = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(energyMix);
-  }, [energyMix]);
+  // useEffect(() => {
+  //   console.log(energyMix);
+  // }, [energyMix]);
 
   //   if (isLoading) {
   //     return <div>fetching data...</div>;

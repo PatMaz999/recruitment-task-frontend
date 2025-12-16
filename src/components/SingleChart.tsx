@@ -56,8 +56,8 @@ const SingleChart = ({
 
   return (
     <div className={style.singleChart}>
-      <h2 className={style.text}>{day}</h2>
-      <h4 className={style.text}>Green energy: {totalGreenPerc} %</h4>
+      <h2>{day}</h2>
+      <h4>Green energy: {totalGreenPerc} %</h4>
       <Pie
         data={{
           labels: labels,
