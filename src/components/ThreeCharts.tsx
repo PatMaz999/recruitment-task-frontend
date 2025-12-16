@@ -21,7 +21,7 @@ const ThreeCharts = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:8080/energy-mix/current-three-days"
+        `https://recruitment-task-backend.onrender.com/energy-mix/current-three-days`
       );
       const data = (await response.json()) as EnergyMix[];
       setEnergyMix(data);

@@ -24,7 +24,7 @@ const CarCharging = () => {
     const hours = formData.get("hours");
     const fetchData = async () => {
       const response = await fetch(
-        `http://localhost:8080/energy-mix/optimal-charging?hours=${duration}`
+        `https://recruitment-task-backend.onrender.com/energy-mix/optimal-charging?hours=${duration}`
       );
       const data = await response.json();
       setOptimalCharging(data);
