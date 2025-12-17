@@ -1,3 +1,13 @@
+.loadedchartContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.unloadedLayout {
+    display: flex;
+    justify-content: center;
+}
+
 .container{
     background-color: #d8f3dc;
     margin: 10px;
@@ -6,10 +16,10 @@
     border-radius: 10px;
     font-family:  'Arial'
 }
-.chartContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
+// .chartContainer{
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+// }
 .title{
     text-align: center;
 }

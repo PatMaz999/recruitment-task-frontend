@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Energy Mix App</title>
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
